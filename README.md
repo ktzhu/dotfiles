@@ -35,6 +35,20 @@ Updating all bundled plugins:
 
     git submodule foreach git pull origin master
 
+***NOTE REGARDING COMMAND-T***:
+
+On my machine, I built Vim with my system ruby, so be sure I'm using this before making Command-T.
+
+    rvm use system
+
+After updating Command-T, you have to manually build the C extension:
+
+    cd ~/.dotfiles/vim/bundle/command-t/ruby/command-t
+    ruby extconf.rb
+    make
+
+This shouldn't give you any errors if you're doing it right.
+
 bash
 ---
 
