@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/Katie/Dev/GOOD/citizen/spec/requests/tagging'
+let g:netrw_dirhist_2='/Users/Katie/Dev/GOOD/citizen/spec/requests'
+let g:netrw_dirhist_3='/Users/Katie/Dev/GOOD/citizen/spec/requests/administrating'
+let g:netrw_dirhist_4='/Users/Katie/Dev/GOOD/citizen/spec/requests'
+let g:netrw_dirhist_5='/Users/Katie/Dev/GOOD/citizen/spec/requests/tagging'
+let g:netrw_dirhist_6='/Users/Katie/.venvburrito'

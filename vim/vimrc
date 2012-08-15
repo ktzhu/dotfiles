@@ -1,0 +1,75 @@
+runtime! autoload/pathogen.vim
+silent! call pathogen#helptags()
+silent! call pathogen#runtime_append_all_bundles()
+let mapleader=","
+syntax enable
+set nocompatible
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set ai
+set number
+set runtimepath+=/usr/share/lilypond/2.12.3/vim/
+set wildignore=*.swp,*.bak,*.pyc,*.class
+" nnoremap ; :
+filetype on
+filetype plugin on
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Clear highlighted searches with ease
+nmap <silent> ,/ :nohlsearch<CR>
+
+" Disable arrow keys!!!!
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+if exists("g:insert_mode_background_color")
+  augroup HighlightOnInsert
+    autocmd!
+    autocmd InsertEnter * execute "highlight Normal guibg=" . g:insert_mode_background_color
+    autocmd InsertLeave * execute "colorscheme " . g:colors_name
+  augroup END
+endif
+
+" Vim UI {
+  colorscheme impact
+  if has('statusline')
+    set laststatus=2
+      set statusline=%<%f\    " Filename
+      set statusline+=%w%h%m%r " Options
+      set statusline+=%{fugitive#statusline()} "  Git Hotness
+      "set statusline+=\ [%{&ff}/%Y]            " filetype
+      set statusline+=\ [%{getcwd()}]          " current dir
+      "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
+      set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+    endif
+  set backspace+=start,eol,indent
+  set showmode
+  set wildmenu
+  set listchars=tab:>.,trail:.,extends:#,nbsp:.
+  highlight ExtraWhitespace ctermbg=red guibg=red
+  match ExtraWhitespace /\s\+$/
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinLeave * call clearmatches()
+" }
+
+" Command-T {
+  let g:CommandTCancelMap='<C-x>'
+  let g:CommandTAcceptSelectionMap = '<C-t>'
+  let g:CommandTAcceptSelectionTabMap = '<CR>'
+" }
+
+" Powerline {
+  let g:Powerline_symbols = 'fancy'
+" }

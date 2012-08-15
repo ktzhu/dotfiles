@@ -1,0 +1,28 @@
+tmux has-session -t dev-good
+if [ $? != 0 ]
+then
+  tmux new-session -s dev-good -n citizen -d
+  tmux send-keys -t dev-good 'cd ~/Dev/GOOD/citizen && vim' C-m
+  tmux split-window -v -t dev-good -p 40
+  tmux send-keys -t dev-good:1.2 'cd ~/Dev/GOOD/citizen' C-m
+
+  tmux new-window -n calumet -t dev-good
+  tmux send-keys -t dev-good:2 'cd ~/Dev/GOOD/calumet && vim' C-m
+  tmux split-window -v -t dev-good:2 -p 40
+  tmux send-keys -t dev-good:2.2 'cd ~/Dev/GOOD/calumet' C-m
+
+  tmux new-window -n servers -t dev-good
+  tmux send-keys -t dev-good:3 'cd ~/Dev/GOOD/citizen && rails s' C-m
+  tmux split-window -v -t dev-good:3
+  tmux select-layout -t dev-good even-vertical
+  tmux send-keys -t dev-good:3.2 'cd ~/Dev/GOOD/calumet && rails s' C-m
+
+  tmux new-window -n guard -t dev-good
+  tmux send-keys -t dev-good:4 'cd ~/Dev/GOOD/citizen && bundle exec guard' C-m
+  tmux split-window -v -t dev-good:4
+  tmux select-layout -t dev-good even-vertical
+  tmux send-keys -t dev-good:4.2 'cd ~/Dev/GOOD/calumet && bundle exec guard' C-m
+
+  tmux select-window -t dev-good:1
+fi
+tmux attach -t dev-good

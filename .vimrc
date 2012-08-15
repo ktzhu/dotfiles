@@ -1,9 +1,0 @@
-syntax on
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-set ai
-set number
-colorscheme impact
-set runtimepath+=/usr/share/lilypond/2.12.3/vim/
-filetype on

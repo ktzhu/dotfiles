@@ -101,3 +101,41 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 export CLICOLOR=true
+
+# Git st / co
+
+parse_git_branch()
+{
+  if git rev-parse --git-dir >/dev/null 2>&1
+  then
+    echo -e "" [$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')]
+  else
+    echo ""
+  fi
+}
+
+function git_color {
+  local STATUS=`git status 2>&1`
+  if [[ "$STATUS" == *'Not a git repository'* ]]
+  then
+    echo ""
+  else
+    if [[ "$STATUS" != *'working directory clean'* ]]
+    then
+      echo -e '\033[0;31m'
+    else
+      if [[ "$STATUS" == *'Your branch is ahead'* || "$STATUS" == *'Your branch is behind'* ]]
+      then
+        echo -e '\033[0;33m'
+      else
+        echo -e '\033[0;36m'
+      fi
+    fi
+  fi
+}
+
+PS1='\[\033[00;32m\]($(date +%H:%M))\[$(git_color)\]$(parse_git_branch) \[\033[00;34m\]\w \[\033[00;33m\]>>\[\033[00m\] '
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+set -o vi # Set bash input to vi mode
