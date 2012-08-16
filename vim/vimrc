@@ -32,6 +32,12 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+" Drag lines with ease
+nmap <C-k> [e
+nmap <C-j> ]e
+vmap <C-k> [egv
+vmap <C-j> ]egv
+
 if exists("g:insert_mode_background_color")
   augroup HighlightOnInsert
     autocmd!
@@ -68,6 +74,7 @@ endif
   let g:CommandTCancelMap='<C-x>'
   let g:CommandTAcceptSelectionMap = '<C-t>'
   let g:CommandTAcceptSelectionTabMap = '<CR>'
+  let g:CommandTMaxFiles=5000
 " }
 
 " Powerline {
