@@ -10,7 +10,7 @@ set expandtab
 set ai
 set number
 set runtimepath+=/usr/share/lilypond/2.12.3/vim/
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.bak,*.pyc,*.class
 " nnoremap ; :
 filetype on
 filetype plugin on
@@ -24,6 +24,9 @@ nmap <silent> ,/ :nohlsearch<CR>
 
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
+
+" Set RVM Ruby path
+let g:ruby_path = system('rvm current')
 
 " Disable arrow keys!!!!
 map <up> <nop>
