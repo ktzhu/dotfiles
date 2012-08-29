@@ -22,6 +22,9 @@ set smartcase
 " Clear highlighted searches with ease
 nmap <silent> ,/ :nohlsearch<CR>
 
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
+
 " Disable arrow keys!!!!
 map <up> <nop>
 map <down> <nop>
@@ -68,13 +71,6 @@ endif
   autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
   autocmd InsertLeave * match ExtraWhitespace /\s\+$/
   autocmd BufWinLeave * call clearmatches()
-" }
-
-" Command-T {
-  let g:CommandTCancelMap='<C-x>'
-  let g:CommandTAcceptSelectionMap = '<C-t>'
-  let g:CommandTAcceptSelectionTabMap = '<CR>'
-  let g:CommandTMaxFiles=5000
 " }
 
 " Powerline {
