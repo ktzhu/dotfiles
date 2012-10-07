@@ -17,12 +17,6 @@ then
   tmux select-layout -t dev-good even-vertical
   tmux send-keys -t dev-good:3.2 'cd ~/Dev/GOOD/calumet && rails s' C-m
 
-  tmux new-window -n guard -t dev-good
-  tmux send-keys -t dev-good:4 'cd ~/Dev/GOOD/citizen && bundle exec guard' C-m
-  tmux split-window -v -t dev-good:4
-  tmux select-layout -t dev-good even-vertical
-  tmux send-keys -t dev-good:4.2 'cd ~/Dev/GOOD/calumet && bundle exec guard' C-m
-
   tmux select-window -t dev-good:1
 fi
 tmux attach -t dev-good
