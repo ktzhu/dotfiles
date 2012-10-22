@@ -14,7 +14,7 @@ alias goodrb='cd ~/Dev/GOOD/good.rb/'
 alias goodis='cd ~/Dev/GOOD/good.is/'
 alias drivethru='cd ~/Documents/Classes/EECS\ 338\ \|\ Infosys/drivethrurb/'
 
-alias madhatter='ssh kaz600@madhatter.eecs.northwestern.edu'
+alias sshwilk='ssh kaz600@madhatter.eecs.northwestern.edu'
 
 PATH=/usr/local/bin:$PATH:$HOME/bin:/usr/local/sbin
 export PATH

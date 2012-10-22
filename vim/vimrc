@@ -26,6 +26,9 @@ nmap <silent> ,/ :nohlsearch<CR>
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
 
+" Select all
+nmap <C-a> ggVG"*yG<CR>
+
 " Set RVM Ruby path
 let g:ruby_path = system('rvm current')
 
