@@ -19,6 +19,11 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set vb
+set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+
+" Ignore whitespace in diffs
+set diffopt+=iwhite
 
 " Clear highlighted searches with ease
 nmap <silent> ,/ :nohlsearch<CR>
@@ -31,6 +36,12 @@ nmap <C-a> ggVG"*yG<CR>
 
 " Set RVM Ruby path
 let g:ruby_path = system('rvm current')
+
+" NERDTreeToggle with ,n
+nnoremap <leader>n :NERDTreeToggle<CR>
+
+" GundoToggle with ,x
+nnoremap <leader>x :GundoToggle<CR>
 
 " Disable arrow keys!!!!
 map <up> <nop>

@@ -139,3 +139,6 @@ PS1='\[\033[00;32m\]($(date +%H:%M))\[$(git_color)\]$(parse_git_branch) \[\033[0
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 set -o vi # Set bash input to vi mode
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
