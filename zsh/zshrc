@@ -10,6 +10,9 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias postgresup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -37,4 +40,4 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/Katie/.rvm/gems/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/share/python:/Users/Katie/.venvburrito/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/heroku/bin:/Users/Katie/bin:/usr/local/sbin:/Users/Katie/.rvm/bin:/Users/Katie/bin:/usr/local/sbin
+source /usr/local/bin/virtualenvwrapper.sh
