@@ -142,3 +142,7 @@ set -o vi # Set bash input to vi mode
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Appease Python distutils
+
+export PATH=/usr/local/share/python:$PATH
