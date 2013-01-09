@@ -13,6 +13,9 @@ export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 setopt nobeep
 
+# Turn off that damn autocorrect
+unsetopt correct_all
+
 # History stuff
 # Remember about a years worth of history (AWESOME)
 SAVEHIST=10000
@@ -63,4 +66,4 @@ plugins=(git vi-mode ruby rails virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-source /usr/local/bin/virtualenvwrapper.sh
+source `which virtualenvwrapper.sh`
