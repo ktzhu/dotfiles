@@ -1,0 +1,28 @@
+session:
+  name: 'caurs'
+  windows:
+    - name: 'editor'
+      clear: true
+      options:
+        synchronize-panes: false
+      root: "~/Dev/comptroller"
+      filters:
+        before:
+          - "echo Get mah venv on"
+          - "workon caurs"
+      splits:
+        - cmd: "git fetch"
+        - cmd: "git status"
+          focus: true
+          height: 50
+    - name: 'servers'
+      root: "~/Dev/comptroller"
+      filters:
+        before:
+          - "echo Get mah venv on"
+          - "workon caurs"
+          - "echo Servers go"
+          - "python run.py"
+      splits:
+        - cmd: "git fetch"
+        - cmd: "git status"

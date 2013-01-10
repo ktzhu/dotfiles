@@ -67,6 +67,9 @@ plugins=(git vi-mode ruby rails)
 # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+# teamocil autocompletion
+compctl -g '~/.teamocil/*(:t:r)' teamocil
+
 # Source dat bidness
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/python/virtualenvwrapper.sh
