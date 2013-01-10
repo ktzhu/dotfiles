@@ -66,7 +66,7 @@ plugins=(git vi-mode ruby rails)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/python/virtualenvwrapper.sh
-source ~/.git-completion.zsh
+# source ~/.git-completion.zsh - comment for now bc it parse errors out when tab completing files
 source ~/.env
 
 # Customize to your needs...
