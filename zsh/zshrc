@@ -58,12 +58,16 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode ruby rails virtualenvwrapper)
+plugins=(git vi-mode ruby rails)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/local/share/python/virtualenvwrapper.sh
+source ~/.git-completion.zsh
 
 # Customize to your needs...
-source `which virtualenvwrapper.sh`
+export PATH=/Users/Katie/.rvm/gems/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/share/python:/Users/Katie/.venvburrito/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/heroku/bin:/Users/Katie/bin:/usr/local/sbin:/Users/Katie/.rvm/bin:/Users/Katie/bin:/usr/local/sbin
+export PATH=/usr/local/share/python:$PATH
