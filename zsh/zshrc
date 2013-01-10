@@ -80,3 +80,8 @@ source ~/.env
 export PATH=/Users/Katie/.rvm/gems/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/share/python:/Users/Katie/.venvburrito/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/heroku/bin:/Users/Katie/bin:/usr/local/sbin:/Users/Katie/.rvm/bin:/Users/Katie/bin:/usr/local/sbin
 
 export PATH=/usr/local/share/python:$PATH
+bindkey '^R' history-incremental-search-backward
+alias tmuxnew="tmux -S /usr/local/var/pairprogramming new"
+alias tmuxopen="chmod 777 /usr/local/var/pairprogramming"
+alias tmuxat="tmux -S /usr/local/var/pairprogramming at"
+alias dev="cd ~/Dev"

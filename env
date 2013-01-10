@@ -1,0 +1,3 @@
+export ZSH_DIR=$HOME/.dotfiles/zsh
+export VIM_DIR=$HOME/.dotfiles/vim
+export TMUX_DIR=$HOME/.dotfiles/tmux
