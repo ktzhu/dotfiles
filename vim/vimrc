@@ -1,5 +1,4 @@
 runtime! autoload/pathogen.vim
-let g:pathogen_disabled = ['vim-slim']
 silent! call pathogen#helptags()
 silent! call pathogen#runtime_append_all_bundles()
 let mapleader=","
