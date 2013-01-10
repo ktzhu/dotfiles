@@ -7,11 +7,17 @@ To sync on new machine:
 
     cd ~
     git clone https://github.com/kzhu91/dotfiles.git ~/.dotfiles
+
+Then symlink files appropriately.
+
     ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
     ln -s ~/.dotfiles/vim/ ~/.vim
     ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
     ln -s ~/.dotfiles/bashrc ~/.bashrc
     ln -s ~/.dotfiles/bash_profile ~/.bash_profile
+    ...
+
+I'll write a script to automate this some day.
 
 Dealing with submodules:
 
@@ -52,6 +58,8 @@ Removing a plugin (i.e. a git submodule):
     git rm --cached path/to/submodule (NOTE: NO TRAILING SLASH!)
     Commit and delete untracked submodule files.
 
+The following bit is outdated since I switched to ctrl-p. But leaving this here for notes.
+
 ***NOTE REGARDING COMMAND-T***:
 
 On my machine, I built Vim with my system ruby, so be sure I'm using this before making Command-T.
@@ -76,3 +84,8 @@ git
 ---
 
 * *git-completion.bash*: tab complete for git
+
+zsh
+---
+
+* oh-my-zsh that bidness
