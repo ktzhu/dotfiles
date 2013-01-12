@@ -2,7 +2,7 @@ session:
   name: 'caurs'
   windows:
     - name: 'editor'
-      clear: true
+      # clear: true
       options:
         synchronize-panes: false
       root: "~/Dev/comptroller"
@@ -11,7 +11,11 @@ session:
           - "echo Get mah venv on"
           - "workon caurs"
       splits:
+        - cmd:
+          - "echo 'empty cmd hacks'"
+          - exit
         - cmd: "git fetch"
+          target: 'bottom'
         - cmd: "git status"
           focus: true
           height: 50
@@ -26,3 +30,10 @@ session:
       splits:
         - cmd: "git fetch"
         - cmd: "git status"
+    - name: 'proto'
+      splits:
+        - cmd: cd ~/Dev
+        - cmd:
+          - cd ~/Dev
+          - git status
+          width: 50
