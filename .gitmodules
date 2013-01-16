@@ -64,3 +64,6 @@
 [submodule "vim/bundle/mru.vim"]
 	path = vim/bundle/mru.vim
 	url = git://github.com/vim-scripts/mru.vim.git
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git

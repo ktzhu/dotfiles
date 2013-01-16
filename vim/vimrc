@@ -13,6 +13,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.bak,*.pyc,*.class
 " nnoremap ; :
 filetype on
 filetype plugin on
+filetype  plugin indent on
 set hlsearch
 set incsearch
 set ignorecase
@@ -57,6 +58,14 @@ nmap <C-j> ]e
 vmap <C-k> [egv
 vmap <C-j> ]egv
 
+" Indent lines with ease
+vnoremap < <gv
+vnoremap > >gv
+map = <c-w>><c-w>><c-w>><c-w>><c-w>>
+map - <c-w><<c-w><<c-w><<c-w><<c-w><
+
+au BufNewFile,BufRead *.jst set syntax=jst
+
 if exists("g:insert_mode_background_color")
   augroup HighlightOnInsert
     autocmd!
@@ -66,7 +75,9 @@ if exists("g:insert_mode_background_color")
 endif
 
 " Vim UI {
-  colorscheme impact
+  set background=dark
+  let &t_Co=256
+  colorscheme desert256
   if has('statusline')
     set laststatus=2
       set statusline=%<%f\    " Filename
