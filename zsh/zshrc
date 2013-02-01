@@ -15,7 +15,6 @@ bindkey "^H" backward-delete-char
 bindkey "^U" kill-line
 
 export EDITOR='vi'
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 setopt nobeep
 
