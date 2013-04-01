@@ -28,7 +28,7 @@ fun! <SID>ObliterateTrailingWhitespace()
     call cursor(l, c)
 endfun
 
-autocmd FileType c,cpp,java,php,ruby,python,less autocmd BufWritePre <buffer> :call <SID>ObliterateTrailingWhitespace()
+autocmd FileType c,cpp,java,php,ruby,python,less,html autocmd BufWritePre <buffer> :call <SID>ObliterateTrailingWhitespace()
 
 " Ignore whitespace in diffs
 set diffopt+=iwhite
