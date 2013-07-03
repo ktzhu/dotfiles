@@ -1,0 +1,22 @@
+session:
+  name: 'nyt-catwalk'
+  windows:
+    - name: 'console'
+      root: "~/Dev/nyt-src/catwalk"
+      splits:
+        - cmd: "pwd"
+        - cmd: "git status"
+    - name: 'editor'
+      clear: true
+      options:
+        synchronize-panes: false
+      root: "~/Dev/nyt-src/catwalk"
+      filters:
+        before:
+          - "rvm current"
+      splits:
+        - cmd: "vi"
+          focus: true
+          height: 50
+        - cmd: "git fetch"
+          target: 'bottom'

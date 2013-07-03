@@ -1,0 +1,29 @@
+session:
+    name: "app-template"
+    windows:
+        - name: "term"
+          clear: true
+          root: "~/Dev/npr-src/app-template"
+          filters:
+            before:
+              - "workon app-template"
+          splits:
+            - cmd: "pwd"
+              focus: true
+        - name: "servers"
+          clear: true
+          root: "~/Dev/npr-src/app-template"
+          filters:
+            before:
+              - "workon app-template"
+          splits:
+            - cmd: "python app.py"
+        - name: "vim"
+          clear: true
+          root: "~/Dev/npr-src/app-template"
+          filters:
+            before:
+                - "workon app-template"
+          splits:
+            - cmd: "vim ."
+
