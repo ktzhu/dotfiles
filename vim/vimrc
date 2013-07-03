@@ -8,7 +8,7 @@ set shiftwidth=2
 set expandtab
 set ai
 set number
-set runtimepath+=/usr/share/lilypond/2.12.3/vim/
+" set runtimepath+=/usr/share/lilypond/2.12.3/vim/
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.bak,*.pyc,*.class
 " nnoremap ; :
 filetype on
@@ -28,7 +28,7 @@ fun! <SID>ObliterateTrailingWhitespace()
     call cursor(l, c)
 endfun
 
-autocmd FileType c,cpp,java,php,ruby,python,less,html autocmd BufWritePre <buffer> :call <SID>ObliterateTrailingWhitespace()
+autocmd FileType c,cpp,java,php,ruby,python,less,html,javascript autocmd BufWritePre <buffer> :call <SID>ObliterateTrailingWhitespace()
 
 " Ignore whitespace in diffs
 set diffopt+=iwhite
@@ -86,7 +86,8 @@ endif
 " Vim UI {
   set background=dark
   let &t_Co=256
-  colorscheme desert256
+  colorscheme vimbrant
+  highlight ColorColumn ctermbg=7
   if has('statusline')
     set laststatus=2
       set statusline=%<%f\    " Filename
