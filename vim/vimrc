@@ -86,6 +86,7 @@ endif
 " Vim UI {
   set background=dark
   let &t_Co=256
+  let g:solarized_termtrans = 1
   colorscheme vimbrant
   highlight ColorColumn ctermbg=7
   if has('statusline')
