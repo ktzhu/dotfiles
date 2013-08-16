@@ -1,0 +1,21 @@
+session:
+    name: "radar"
+    windows:
+        - name: "editor"
+          clear: true
+          root: "~/Dev/nyt-src/radar"
+          filters:
+            before:
+              - "workon datasci"
+          splits:
+            - cmd: "vi"
+              focus: true
+            - cmd: "pwd"
+        - name: "editor"
+          clear: true
+          root: "~/Dev/nyt-src/radar"
+          filters:
+            before:
+              - "workon datasci"
+          splits:
+            - cmd: "git status && git fetch"

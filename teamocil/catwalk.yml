@@ -20,3 +20,9 @@ session:
           height: 50
         - cmd: "git fetch"
           target: 'bottom'
+    - name: 'servers'
+      root: "~/Dev/nyt-src/catwalk"
+      splits:
+        - cmd: "rake run"
+        - cmd: "rake assets:scripts"
+        - cmd: "rake assets:styles"
