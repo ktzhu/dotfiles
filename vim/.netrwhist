@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/Katie/Dev/GOOD/citizen/spec/requests/tagging'
 let g:netrw_dirhist_2='/Users/Katie/Dev/GOOD/citizen/spec/requests'
 let g:netrw_dirhist_3='/Users/Katie/Dev/GOOD/citizen/spec/requests/administrating'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/Users/Katie/Dev/GOOD/citizen/spec/requests'
 let g:netrw_dirhist_5='/Users/Katie/Dev/GOOD/citizen/spec/requests/tagging'
 let g:netrw_dirhist_6='/Users/Katie/.venvburrito'
 let g:netrw_dirhist_7='/Users/Katie/Dev/sinatrastrap'
+let g:netrw_dirhist_8='/Users/Katie/Dev/nyt-src/blade-chef'
