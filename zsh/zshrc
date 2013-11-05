@@ -83,9 +83,9 @@ source /usr/local/share/python/virtualenvwrapper.sh
 source ~/.env
 
 # my PATH is unwieldy should clean this
-export PATH=/Users/Katie/.rvm/gems/ruby-1.9.3-p194/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/share/python:/Users/Katie/.venvburrito/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/heroku/bin:/Users/Katie/bin:/usr/local/sbin:/Users/Katie/.rvm/bin:/Users/Katie/bin:/usr/local/sbin
+export PATH=/Users/Katie/.rvm/gems/ruby-1.9.3-p194/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/Katie/.venvburrito/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/heroku/bin:/Users/Katie/bin:/usr/local/sbin:/Users/Katie/.rvm/bin:/Users/Katie/bin:/usr/local/sbin
 
-export PATH=/usr/local/share/python:/usr/local/share/npm/bin:$PATH
+export PATH=~/dev/obvious-src/internal/scripts:/usr/local/share/npm/bin:$PATH
 bindkey '^R' history-incremental-search-backward
 alias tmuxnew="tmux -S /usr/local/var/pairprogramming new"
 alias tmuxopen="chmod 777 /usr/local/var/pairprogramming"

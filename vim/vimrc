@@ -28,7 +28,7 @@ fun! <SID>ObliterateTrailingWhitespace()
     call cursor(l, c)
 endfun
 
-autocmd FileType c,cpp,java,php,ruby,python,less,html,javascript autocmd BufWritePre <buffer> :call <SID>ObliterateTrailingWhitespace()
+autocmd FileType c,cpp,java,php,ruby,python,less,html,jade,javascript autocmd BufWritePre <buffer> :call <SID>ObliterateTrailingWhitespace()
 
 " Ignore whitespace in diffs
 set diffopt+=iwhite
@@ -74,6 +74,7 @@ map = <c-w>><c-w>><c-w>><c-w>><c-w>>
 map - <c-w><<c-w><<c-w><<c-w><<c-w><
 
 au BufNewFile,BufRead *.jst set syntax=jst
+au BufNewFile,BufRead *.soy set syntax=soy
 
 if exists("g:insert_mode_background_color")
   augroup HighlightOnInsert
@@ -113,4 +114,8 @@ endif
 
 " Powerline {
   let g:Powerline_symbols = 'fancy'
+" }
+
+" ctrl-p {
+  let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|out'
 " }

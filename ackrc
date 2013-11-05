@@ -1,0 +1,3 @@
+--color
+--ignore-dir=out/
+--ignore-dir=mapreduce/testdata/
