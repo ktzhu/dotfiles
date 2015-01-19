@@ -100,7 +100,7 @@ endif
       "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
       set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
     endif
-  set backspace+=start,eol,indent
+  set backspace=start,eol,indent
   set showmode
   set wildmenu
   set listchars=tab:>.,trail:.,extends:#,nbsp:.
@@ -119,3 +119,5 @@ endif
 " ctrl-p {
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|out'
 " }
+
+set mouse=a
