@@ -21,6 +21,9 @@ set smartcase
 set vb
 set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
+" ctrlp ignore .git and compiled files
+let g:ctrlp_custom_ignore = 'out/intermediates\|out/final|git'
+
 fun! <SID>ObliterateTrailingWhitespace()
     let l = line(".")
     let c = col(".")
@@ -75,6 +78,7 @@ map - <c-w><<c-w><<c-w><<c-w><<c-w><
 
 au BufNewFile,BufRead *.jst set syntax=jst
 au BufNewFile,BufRead *.soy set syntax=soy
+au BufNewFile,BufRead *.proto set syntax=proto
 
 if exists("g:insert_mode_background_color")
   augroup HighlightOnInsert
