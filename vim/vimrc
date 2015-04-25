@@ -127,5 +127,5 @@ let g:lightline = {
 " ctrl-p {
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|out'
 " }
-:set mouse=a
 
+:set mouse=a
