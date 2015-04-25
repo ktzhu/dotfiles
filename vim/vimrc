@@ -8,7 +8,6 @@ set shiftwidth=2
 set expandtab
 set ai
 set number
-" set runtimepath+=/usr/share/lilypond/2.12.3/vim/
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.bak,*.pyc,*.class
 " nnoremap ; :
 filetype on
@@ -20,6 +19,7 @@ set ignorecase
 set smartcase
 set vb
 set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
+highlight Cursor guifg=cyan guibg=cyan
 
 " ctrlp ignore .git and compiled files
 let g:ctrlp_custom_ignore = 'out/intermediates\|out/final|git'
@@ -50,19 +50,21 @@ let g:ruby_path = system('rvm current')
 
 " NERDTreeToggle with ,n
 nnoremap <leader>n :NERDTreeToggle<CR>
+" NERDTreeFind with ,m
+nnoremap <leader>m :NERDTreeFind<CR>
 
 " GundoToggle with ,x
 nnoremap <leader>x :GundoToggle<CR>
 
-" Disable arrow keys!!!!
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+" disable arrow keys
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
 
 " Drag lines with ease
 nmap <C-k> [e
@@ -79,6 +81,7 @@ map - <c-w><<c-w><<c-w><<c-w><<c-w><
 au BufNewFile,BufRead *.jst set syntax=jst
 au BufNewFile,BufRead *.soy set syntax=soy
 au BufNewFile,BufRead *.proto set syntax=proto
+au BufNewFile,BufRead *.go set syntax=go
 
 if exists("g:insert_mode_background_color")
   augroup HighlightOnInsert
@@ -89,10 +92,10 @@ if exists("g:insert_mode_background_color")
 endif
 
 " Vim UI {
-  set background=dark
+  set background=light
   let &t_Co=256
   let g:solarized_termtrans = 1
-  colorscheme vimbrant
+  colorscheme pencil
   highlight ColorColumn ctermbg=7
   if has('statusline')
     set laststatus=2
@@ -116,10 +119,13 @@ endif
   autocmd BufWinLeave * call clearmatches()
 " }
 
-" Powerline {
-  let g:Powerline_symbols = 'fancy'
-" }
+" lightline
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 " ctrl-p {
   let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|out'
 " }
+:set mouse=a
+

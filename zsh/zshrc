@@ -44,7 +44,7 @@ setopt HIST_IGNORE_DUPS
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias postgresup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias postgresdown='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-# export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -83,20 +83,13 @@ source $ZSH/oh-my-zsh.sh
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
-# source /usr/local/share/python/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 # source ~/.git-completion.zsh - comment for now bc it parse errors out when tab completing files
 # source ~/.env
 
-# my PATH is unwieldy should clean this
-export PATH=$PATH:/usr/local/sbin
-
-export PATH=/usr/local/share/npm/bin:$PATH
-# export PATH=/Users/Katie/.rvm/gems/ruby-1.9.3-p194/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/Katie/.venvburrito/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/Katie/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/Katie/.rvm/bin:/usr/local/heroku/bin:/Users/Katie/bin:/usr/local/sbin:/Users/Katie/.rvm/bin:/Users/Katie/bin:/usr/local/sbin
-
-export PATH=~/dev/obvious-src/internal/scripts:/usr/local/share/npm/bin:$PATH
+export PATH=/usr/local/share/npm/bin:~/code/obvious/internal/scripts:/usr/local/bin:$PATH:$HOME/bin:$PYTHONPATH
 
 bindkey '^R' history-incremental-search-backward
-export PATH=~/dev/obvious-src/internal/scripts:~/android-sdk/platform-tools/:$PATH:$HOME/bin
 alias tmuxnew="tmux -S /usr/local/var/pairprogramming new"
 alias tmuxopen="chmod 777 /usr/local/var/pairprogramming"
 alias tmuxat="tmux -S /usr/local/var/pairprogramming at"
@@ -116,3 +109,65 @@ alias fuckit="git reset --hard HEAD"
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 export JAVA_HOME="$(/usr/libexec/java_home)"
 export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+export GOPATH=$HOME/code/golang:$HOME/code/obvious/go-forks
+
+# medium keys
+# export AWS_ACCESS_KEY_ID="AKIAJ2L3T6JXLK4QRJTQ"
+# export AWS_SECRET_ACCESS_KEY="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"
+
+. `brew --prefix`/etc/profile.d/z.sh
+
+# katie+opennews keys
+export AWS_ACCESS_KEY_ID="AKIAIJEXWNXQF4XAQ3HA"
+export AWS_SECRET_ACCESS_KEY="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"
+export OWHACK_GOOGLE_EMAIL='owhack.maps@gmail.com'
+export OWHACK_GOOGLE_PASS='d!spUted'
+
+# Note: ~/.ssh/environment should not be used, as it
+#       already has a different purpose in SSH.
+
+env=~/.ssh/agent.env
+
+# Note: Don't bother checking SSH_AGENT_PID. It's not used
+#       by SSH itself, and it might even be incorrect
+#       (for example, when using agent-forwarding over SSH).
+
+agent_is_running() {
+    if [ "$SSH_AUTH_SOCK" ]; then
+        # ssh-add returns:
+        #   0 = agent running, has keys
+        #   1 = agent running, no keys
+        #   2 = agent not running
+        ssh-add -l >/dev/null 2>&1 || [ $? -eq 1 ]
+    else
+        false
+    fi
+}
+
+agent_has_keys() {
+    ssh-add -l >/dev/null 2>&1
+}
+
+agent_load_env() {
+    . "$env" >/dev/null
+}
+
+agent_start() {
+    (umask 077; ssh-agent >"$env")
+    . "$env" >/dev/null
+}
+
+if ! agent_is_running; then
+    agent_load_env
+fi
+
+# if your keys are not stored in ~/.ssh/id_rsa.pub or ~/.ssh/id_dsa.pub, you'll need
+# to paste the proper path after ssh-add
+if ! agent_is_running; then
+    agent_start
+    ssh-add
+elif ! agent_has_keys; then
+    ssh-add
+fi
+
+unset env
