@@ -16,9 +16,6 @@
 [submodule "vim/bundle/color-schemes"]
 	path = vim/bundle/color-schemes
 	url = git://github.com/flazz/vim-colorschemes.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-        url = git://altercation/vim-colors-solarized.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
