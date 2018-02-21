@@ -122,19 +122,19 @@ function git_color {
   else
     if [[ "$STATUS" != *'working directory clean'* ]]
     then
-      echo -e '\033[0;31m'
+      echo -e '\033[38;5;111m'
     else
       if [[ "$STATUS" == *'Your branch is ahead'* || "$STATUS" == *'Your branch is behind'* ]]
       then
-        echo -e '\033[0;33m'
+        echo -e '\033[38;5;111m'
       else
-        echo -e '\033[0;36m'
+        echo -e '\033[38;5;111m'
       fi
     fi
   fi
 }
 
-PS1='\[\033[00;32m\]($(date +%H:%M))\[$(git_color)\]$(parse_git_branch) \[\033[00;34m\]\w \[\033[00;33m\]>>\[\033[00m\] '
+PS1='\[\033[38;5;210m\]($(date +%H:%M))\[$(git_color)\]$(parse_git_branch) \[\033[38;5;39m\]\w \[\033[38;5;210m\]kt 👑  \[\033[00m\] '
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
@@ -146,3 +146,12 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Appease Python distutils
 
 export PATH=/usr/local/share/python:$PATH
+export PATH=/Users/kt/bin:$PATH
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Load the Medium environment
+# [ -f /opt/medium/env ] && source /opt/medium/env

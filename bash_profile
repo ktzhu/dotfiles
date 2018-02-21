@@ -5,28 +5,29 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
-source ~/.git-completion.bash
+# source ~/.git-completion.bash
 
-# Current Projects
-alias foggy='cd ~/Dev/GOOD/foghorn/'
-alias goodlyfe='cd ~/Dev/GOOD/'
-alias goodrb='cd ~/Dev/GOOD/good.rb/'
-alias goodis='cd ~/Dev/GOOD/good.is/'
-alias drivethru='cd ~/Documents/Classes/EECS\ 338\ \|\ Infosys/drivethrurb/'
 
-alias sshwilk='ssh kaz600@madhatter.eecs.northwestern.edu'
+export PATH=/usr/local/share/npm/bin:~/workspace/medium/internal/scripts:/usr/local/bin:$PATH:$HOME
 
-PATH=/usr/local/bin:$PATH:$HOME/bin:/usr/local/sbin
-export PATH
-# alias mysqlstart='/usr/local/Cellar/mysql/5.5.14/bin/mysqld_safe &'
-alias mysqlstart='/usr/local/Cellar/mysql/5.5.14/bin/mysql.server start'
-alias mysqlstop='/usr/local/Cellar/mysql/5.5.14/bin/mysqladmin -u root -p shutdown'
-alias reload='source ~/.bash_profile'
+alias tmuxnew="tmux -S /usr/local/var/pairprogramming new"
+alias tmuxopen="chmod 777 /usr/local/var/pairprogramming"
+alias tmuxat="tmux -S /usr/local/var/pairprogramming at"
+alias dev="cd ~/Dev"
+alias flushdns="dscacheutil -flushcache"
+alias showdeskicons="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdotfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidedotfiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# Reset previous commit but keep all changes
+alias goddammit="git reset --soft HEAD^"
+# fuck it all
+alias fuckit="git reset --hard HEAD"
 
-# startup virtualenv-burrito
-if [ -f $HOME/.venvburrito/startup.sh ]; then
-    . $HOME/.venvburrito/startup.sh
-fi
+# empty trash and delete Apple's syslogs
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+# export JAVA_HOME="$(/usr/libexec/java_home)"
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
+export EDITOR=vi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
